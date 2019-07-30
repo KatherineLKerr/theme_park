@@ -2,11 +2,14 @@ package attractions;
 
 import org.junit.Before;
 import org.junit.Test;
+import people.Visitor;
 
 import static org.junit.Assert.assertEquals;
 
 public class PlaygroundTest {
     Playground playground;
+    Visitor visitor1;
+    Visitor visitor2;
 
     @Before
     public void setUp() throws Exception {
@@ -26,5 +29,17 @@ public class PlaygroundTest {
     @Test
     public void hasVisitCount() {
         assertEquals(0, playground.getVisitCount());
+    }
+
+    @Test
+    public void canAccessIfLessThan15() {
+        visitor1 = new Visitor(5, 4.5, 10.0);
+        assertEquals(true, playground.isAllowedTo(visitor1));
+    }
+
+    @Test
+    public void cannotAccessIfMoreThan15() {
+        visitor2 = new Visitor(25, 5.9, 50.0);
+        assertEquals(false, playground.isAllowedTo(visitor2));
     }
 }
