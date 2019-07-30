@@ -13,11 +13,14 @@ public class RollercoasterTest {
     Visitor visitor2;
     Visitor visitor3;
     Visitor visitor4;
+    Visitor visitor5;
 
     @Before
     public void setUp() {
         rollerCoaster = new RollerCoaster("Blue Ridge", 10);
+        visitor4 = new Visitor(14, 210.00, 15.00);
     }
+
 
     @Test
     public void hasName() {
@@ -54,7 +57,17 @@ public class RollercoasterTest {
 
     @Test
     public void canAccessIfOver145cmAnd12Years() {
-        visitor4 = new Visitor(14, 200.00, 15.00);
         assertEquals(true, rollerCoaster.isAllowedTo(visitor4));
+    }
+
+    @Test
+    public void canChargeForTicket() {
+        visitor5 = new Visitor(15, 180, 23);
+        assertEquals(8.40, rollerCoaster.priceFor(visitor5), 0.01);
+    }
+
+    @Test
+    public void canChargeDoubleForTallPeople() {
+        assertEquals(16.80, rollerCoaster.priceFor(visitor4), 0.01);
     }
 }
