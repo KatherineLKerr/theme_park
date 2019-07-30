@@ -8,4 +8,8 @@ public class CandyflossStall extends Stall {
         super(name, ownerName, parkingSpot);
         this.rating = rating;
     }
+
+    public int getRating() {
+        return rating;
+    }
 }
