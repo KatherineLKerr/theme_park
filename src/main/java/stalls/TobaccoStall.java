@@ -1,12 +1,16 @@
 package stalls;
 
+import behaviours.IReviewed;
 import behaviours.ISecurity;
 import people.Visitor;
 
-public class TobaccoStall extends Stall implements ISecurity {
+public class TobaccoStall extends Stall implements ISecurity, IReviewed {
 
-    public TobaccoStall(String name, String ownerName, ParkingSpot parkingSpot) {
+    private int rating;
+
+    public TobaccoStall(String name, String ownerName, ParkingSpot parkingSpot, int rating) {
         super(name, ownerName, parkingSpot);
+        this.rating = rating;
     }
 
     public boolean isAllowedTo(Visitor visitor) {
@@ -15,5 +19,9 @@ public class TobaccoStall extends Stall implements ISecurity {
         } else {
             return false;
         }
+    }
+
+    public int getRating() {
+        return this.rating;
     }
 }
