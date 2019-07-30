@@ -54,7 +54,7 @@ public class RollercoasterTest {
 
     @Test
     public void canAccessIfOver145cmAnd12Years() {
-        visitor1 = new Visitor(14, 200.00, 15.00);
+        visitor4 = new Visitor(14, 200.00, 15.00);
         assertEquals(true, rollerCoaster.isAllowedTo(visitor4));
     }
 }
