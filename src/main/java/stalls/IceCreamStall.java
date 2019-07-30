@@ -1,8 +1,17 @@
 package stalls;
 
-public class IceCreamStall extends Stall {
+import behaviours.IReviewed;
 
-    public IceCreamStall(String name, String ownerName, ParkingSpot parkingSpot) {
+public class IceCreamStall extends Stall implements IReviewed {
+
+    private int rating;
+
+    public IceCreamStall(String name, String ownerName, ParkingSpot parkingSpot, int rating) {
         super(name, ownerName, parkingSpot);
+        this.rating = rating;
+    }
+
+    public int getRating() {
+        return this.rating;
     }
 }

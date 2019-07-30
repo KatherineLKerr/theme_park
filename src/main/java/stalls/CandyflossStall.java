@@ -1,6 +1,8 @@
 package stalls;
 
-public class CandyflossStall extends Stall {
+import behaviours.IReviewed;
+
+public class CandyflossStall extends Stall implements IReviewed {
 
     private int rating;
 
