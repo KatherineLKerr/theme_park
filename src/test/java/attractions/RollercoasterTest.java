@@ -58,5 +58,3 @@ public class RollercoasterTest {
         assertEquals(true, rollerCoaster.isAllowedTo(visitor4));
     }
 }
-
-//Rollercoster implements ISecurity and requires a visitor to be over 145cm tall and over 12 years of age
